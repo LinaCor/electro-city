@@ -115,6 +115,7 @@ img {
   --font-family-scnd: "Rosario", sans-serif; //second-family
   --accent-color: #E11C4B;
   --black-color: #000;
+  --white-color: #fff;
 }
 
 body {
@@ -132,9 +133,18 @@ body {
   height: 18px;
   object-fit: contain;
   margin-right: 6px;
+  transition: filter 1s ease;
+}
+
+li:hover .icon,
+button:hover .icon {
+  filter: brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  background-color: transparent;
 }
 
 header {
+  margin-bottom: 25px;
+
   .header-wrapper {
     border-bottom: 2px solid #e8e8e8;
   }
@@ -155,6 +165,10 @@ header {
     .city,
     .stores {
       @include flex-vert;
+
+      span {
+        font-size: 16px
+      }
     }
   }
 
@@ -164,6 +178,12 @@ header {
 
     a {
       color: inherit;
+      transition: 0.5s ease;
+      font-size: 16px;
+
+      &:hover {
+        color: var(--accent-color);
+      }
     }
   }
 
@@ -174,11 +194,13 @@ header {
     padding-bottom: 20px;
 
     .main-logo {
+      font-family: var(--font-family-scnd);
       font-weight: 700;
       font-size: 22px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--accent-color);
+      margin-right: 30px;
     }
 
     .main-input {
@@ -189,9 +211,11 @@ header {
       .search {
         width: 100%;
         height: 46px;
-        padding: 13px 50px;
+        padding: 13px;
+        padding-left: 50px;
         border: 2px solid #ddd;
         border-radius: 100px;
+        cursor: pointer;
       }
 
       &::before {
@@ -210,6 +234,7 @@ header {
     .main-list {
       @include flex-all;
 
+
       li:not(:last-child) {
         margin-right: 24px;
       }
@@ -219,6 +244,11 @@ header {
         flex-direction: column;
         color: inherit;
         text-decoration: none;
+        transition: 0.5s ease-in-out;
+
+        &:hover {
+          color: var(--accent-color);
+        }
       }
     }
   }
@@ -237,13 +267,18 @@ header {
 
       li {
         display: inline-block;
-        margin-right: 37px;
+        margin-right: 38px;
       }
 
       li a {
         color: #000;
+        transition: 0.5s ease;
 
         .active {
+          color: var(--accent-color);
+        }
+
+        &:hover {
           color: var(--accent-color);
         }
       }
@@ -255,7 +290,7 @@ header {
 
     .links-scroll {
       position: absolute;
-      right: 35px;
+      right: 25px;
       top: 50%;
       transform: translateY(-50%);
       width: 18px;
@@ -267,8 +302,93 @@ header {
 }
 
 
-main {
+.promotion {
   flex-grow: 1;
+  @include page-width;
+  margin-bottom: 90px;
+
+  h1 {
+    margin-top: 15px;
+    margin-bottom: 36px;
+    font-size: 36px;
+  }
+
+  .main-list {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+
+    li {
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 15px;
+      }
+    }
+  }
+
+
+}
+
+.gaming-discount {
+  flex-grow: 1;
+  @include page-width;
+  margin-bottom: 90px;
+
+
+  .discount-banner {
+    display: flex;
+    padding: 175px 90px;
+    padding-bottom: 150px;
+    background: url('@img/banner_1-group.png') 96% 60%/600px no-repeat, linear-gradient(to right, #D535E3 0%, #6F74E4 100%, #0052A4 100%);
+    color: var(--white-color);
+    border-radius: 30px;
+    margin-bottom: 36px;
+    line-height: 76px;
+    letter-spacing: -1.9px;
+
+
+    .banner-text {
+      width: 50%;
+
+      h1 {
+        font-size: 72px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 36px;
+        letter-spacing: -0.5px;
+      }
+    }
+
+    .banner-image {
+      width: 50%;
+    }
+  }
+
+  .discount-description {
+
+    h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    span {
+      display: inline-block;
+      color: #939393;
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+  }
 }
 
 
@@ -278,7 +398,7 @@ footer {
   .footer-wrapper {
     @include page-width;
     padding-top: 36px;
-    padding-bottom: 36px;
+    padding-bottom: 20px;
 
     .footer-links {
       @include flex-all;
@@ -291,6 +411,11 @@ footer {
 
         li a {
           color: var(--black-color);
+          transition: 0.5s ease;
+
+          &:hover {
+            color: var(--accent-color);
+          }
         }
       }
 
@@ -299,15 +424,25 @@ footer {
         @include flex-all;
 
         .info-phone {
-          margin-right: 62px
+          margin-right: 68px
         }
 
         .info-phone,
         .info-mail {
           @include flex-all;
 
+          .mail-icon {
+            width: 25px;
+          }
+
           a {
             color: inherit;
+            transition: 0.5s ease;
+            font-size: 16px;
+
+            &:hover {
+              color: var(--accent-color);
+            }
           }
         }
       }
@@ -336,6 +471,11 @@ footer {
             background: #fff no-repeat center / 24px;
             border-radius: 100%;
             border: 1px solid #8d8d8d;
+            transition: 0.5s ease;
+
+            &:hover {
+              background-color: #ffcaca;
+            }
           }
 
           .link-vk {
