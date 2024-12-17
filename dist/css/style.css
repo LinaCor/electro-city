@@ -151,7 +151,13 @@ header .info-buttons .stores {
 
 header .info-buttons .city span,
 header .info-buttons .stores span {
+  transition: 0.5s ease;
   font-size: 16px;
+}
+
+header .info-buttons .city:hover span,
+header .info-buttons .stores:hover span {
+  color: var(--accent-color);
 }
 
 header .info-phone {
@@ -368,7 +374,7 @@ header .links-scroll {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .gaming-discount {
