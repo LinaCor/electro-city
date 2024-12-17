@@ -190,7 +190,7 @@ li {
   }
 
   header .header-main__mobile .input-wrapper .main-input .search {
-    width: 260px;
+    max-width: 260px;
     height: 40px;
     padding-left: 40px;
   }
