@@ -10,12 +10,10 @@
       grid-template-columns: repeat(2, 2fr);
     }
   }
-
 }
 
 @media (max-width: 768px) {
   header {
-
     .header-main {
       padding-top: 10px;
 
@@ -61,7 +59,6 @@
       margin-top: 10px;
       margin-bottom: 45px;
     }
-
 
     .discount-description {
       span {
@@ -127,9 +124,8 @@
 
         .main-input {
 
-
           .search {
-            width: 260px;
+            max-width: 260px;
             height: 40px;
             padding-left: 40px;
 
@@ -169,6 +165,7 @@
     }
   }
 
+
   @keyframes menu-show {
     0% {
       transform: translateX(-100%);
@@ -188,8 +185,6 @@
     z-index: 100;
     transition: 1s ease;
     animation: menu-show 1s;
-
-
 
     .menu-button {
       @include flex-vert;
@@ -364,7 +359,6 @@
       }
     }
 
-
     .discount-description {
 
       h2 {
@@ -458,5 +452,4 @@
       }
     }
   }
-
 }

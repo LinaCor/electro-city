@@ -129,7 +129,6 @@ header {
     .main-list {
       @include flex-all;
 
-
       li:not(:last-child) {
         margin-right: 24px;
       }
@@ -211,7 +210,6 @@ header {
   }
 }
 
-
 .promotion {
   flex-grow: 1;
   @include page-width;
@@ -238,15 +236,12 @@ header {
       }
     }
   }
-
-
 }
 
 .gaming-discount {
   flex-grow: 1;
   @include page-width;
   margin-bottom: 90px;
-
 
   .discount-banner {
     margin-bottom: 35px;
@@ -256,7 +251,6 @@ header {
       border-radius: 30px;
     }
   }
-
 
   .discount-description {
 
@@ -284,7 +278,6 @@ header {
 .mobile-menu {
   display: none;
 }
-
 
 footer {
   background-color: #f4f4f4;
