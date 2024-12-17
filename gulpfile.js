@@ -18,13 +18,12 @@ global.app = {
 function watcher() {
   gulp.watch(path.watch.html, html);
   gulp.watch(path.watch.scss, scss);
-  //gulp.watch(path.watch.js, js);
+  gulp.watch(path.watch.js, js);
   gulp.watch(path.watch.images, images);
 }
 
 
-//const mainTasks = gulp.parallel(html, scss, js, images);
-const mainTasks = gulp.parallel(html, scss, images, mySvgSprite);
+const mainTasks = gulp.parallel(html, scss, js, images, mySvgSprite);
 
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));

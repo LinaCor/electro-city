@@ -154,49 +154,60 @@ header {
 
   .header-links {
     @include page-width;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    white-space: nowrap;
+    padding-right: 45px;
     position: relative;
 
-    .links-list {
-      @include flex-all;
-      padding: 0;
-      margin: 0;
+    .links-container {
+      overflow: auto;
+      white-space: nowrap;
 
-      li {
-        display: inline-block;
-        margin-right: 38px;
+      &::-webkit-scrollbar {
+        height: 2px;
       }
 
-      li a {
-        color: #000;
-        transition: 0.5s ease;
+      &::-webkit-scrollbar-track {
+        background: var(--white-color);
+      }
 
-        .active {
-          color: var(--accent-color);
+      .links-list {
+        @include flex-all;
+        padding: 0;
+        margin: 0;
+
+        li {
+          display: inline-block;
+          margin-right: 38px;
+
+          a {
+            color: #000;
+            transition: 0.5s ease;
+
+            .active {
+              color: var(--accent-color);
+            }
+
+            &:hover {
+              color: var(--accent-color);
+            }
+          }
         }
 
-        &:hover {
-          color: var(--accent-color);
+        li .custom-item {
+          @include flex-vert;
         }
       }
-
-      li .custom-item {
-        @include flex-vert;
-      }
     }
+  }
 
-    .links-scroll {
-      position: absolute;
-      right: 25px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 18px;
-      height: 18px;
-      background: url('@img/menu-btn.svg') 50% 50%/cover no-repeat;
-      cursor: pointer;
-    }
+  .links-scroll {
+    position: absolute;
+    right: 25px;
+    top: 10px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background: url('@img/menu-btn.svg') 50% 50%/cover no-repeat;
+    cursor: pointer;
   }
 }
 

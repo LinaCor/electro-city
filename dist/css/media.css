@@ -232,11 +232,24 @@ li {
     background-color: #E11C4B;
   }
 
+@keyframes menu-show {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+}
+
   .burger-menu {
     position: absolute;
     width: 100vw;
+    top: 0;
     background-color: var(--white-color);
     z-index: 100;
+    transition: 1s ease;
+    animation: menu-show 1s;
   }
 
   .burger-menu .menu-button {
