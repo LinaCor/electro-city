@@ -5,13 +5,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css?_v=20241216165905">
-  <link rel="stylesheet" href="css/media.min.css?_v=20241216165905">
-  <link rel="shortcut icon" href="img/fav.png">
+  <link rel="stylesheet" href="css/style.min.css?_v=20241217132610">
+  <link rel="stylesheet" href="css/media.min.css?_v=20241217132610">
+  <link rel="shortcut icon" href="img/store.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rosario:ital,wght@0,300..700;1,300..700&display=swap&_v=20241216165905"
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rosario:ital,wght@0,300..700;1,300..700&display=swap&_v=20241217132610"
     rel="stylesheet">
 
   <title>Суперскидки на товары для гейминга</title>
@@ -74,6 +74,46 @@
       </li>
     </ul>
   </nav>
+
+  <!--mobile version-->
+  <nav class="header-main__mobile">
+    <div class="logo-wrapper">
+      <a href="/" class="main-logo">электросити</a>
+      <ul class="main-list">
+        <li>
+          <a href="#0">
+            <img src="img/shop.svg" alt="shop" class="icon">
+            <span class="visually-hidden">Покупки</span>
+          </a>
+        </li>
+        <li>
+          <a href="#0">
+            <img src="img/store.svg" alt="like" class="icon">
+            <span class="visually-hidden">Магазины</span>
+          </a>
+        </li>
+        <li>
+          <a href="#0">
+            <img src="img/map.svg" alt="basket" class="icon">
+            <span class="visually-hidden">Город</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="input-wrapper">
+      <button class="main-burger">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+      <div class="main-input">
+        <input type="search" placeholder="Поиск среди товаров" class="search">
+      </div>
+    </div>
+  </nav>
+  <!--mobile version-->
+
   <div class="header-links">
     <ul class="links-list">
       <li>
@@ -119,30 +159,145 @@
     <button class="links-scroll"></button>
   </div>
 </header>
+    <div class="burger-menu">
+  <div class="menu-button">
+    <button class="close-button"></button>
+  </div>
+  <div class="menu-container">
+    <p>Каталог</p>
+    <ul class="menu-list">
+      <li>
+        <a href="#0">
+          <img src="img/mobile/laptops.png" alt="laptops">
+          <span>Ноутбуки и аксессуары</span>
+        </a>
+      </li>
+      <li>
+        <a href="#0">
+          <img src="img/mobile/phones.png" alt="phones">
+          <span>Смартфоны и аксессуары</span>
+        </a>
+      </li>
+      <li>
+        <a href="#0">
+          <img src="img/mobile/TVs.png" alt="TVs">
+          <span>Телевизоры и аксессуары</span>
+        </a>
+      </li>
+      <li>
+        <a href="#0">
+          <img src="img/mobile/photo.png" alt="photo">
+          <span>Фото и видеотехника</span>
+        </a>
+      </li>
+      <li>
+        <a href="#0">
+          <img src="img/mobile/tablets.png" alt="tablets">
+          <span>Планшеты и аксессуары</span>
+        </a>
+      </li>
+      <li>
+        <a href="#0">
+          <img src="img/mobile/headphones.png" alt="headphones">
+          <span>Наушники и аудиотехника</span>
+        </a>
+      </li>
+      <li>
+        <a href="#0">
+          <img src="img/mobile/consoles.png" alt="consoles">
+          <span>Гейминг</span>
+        </a>
+      </li>
+      <li>
+        <a href="#0">
+          <img src="img/mobile/watch.png" alt="watch">
+          <span>Умные часы</span>
+        </a>
+      </li>
+      <li>
+        <a href="#0">
+          <img src="img/mobile/laptops.png" alt="laptops">
+          <span>Портативная акустика</span>
+        </a>
+      </li>
+      <li>
+        <a href="#0">
+          <img src="img/mobile/acoustics.png" alt="acoustics">
+          <span>Сетевое оборудование</span>
+        </a>
+      </li>
+      <li>
+        <a href="#0">
+          <img src="img/mobile/office.png" alt="office">
+          <span>Офисная техника</span>
+        </a>
+      </li>
+      <li>
+        <a href="#0">
+          <img src="img/mobile/smart_home.png" alt="smart_home">
+          <span>Умный дом</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
     <main class="gaming-discount">
         <div class="discount-banner">
-            <div class="banner-text">
-                <h1>Суперскидки на товары<br> для гейминга</h1>
-                <p>c 8 октября до 26 октября</p>
-            </div>
-            <div class="banner-image">
-            </div>
+            <picture>
+                <source media="(max-width: 768px)" srcset="img/banner_1_big-768.png">
+                <source media="(max-width: 576px)" srcset="img/banner_1.png">
+                <img src="img/banner_1_big.png" alt="Суперскидки на товары для гейминга. С 8 октября до 26 октября">
+            </picture>
         </div>
         <div class="discount-description">
             <h2>Скидки до 70% на товары для гейминга</h2>
             <span>c 8 октября до 26 октября</span>
             <p>В период с 8 по 26 октября не пропустите скидки до 70% товары для геймеров. Выбирайте товары из
-                акционного списка <br>
+                акционного списка
                 и при оформлении заказа укажите промокод "GAMER" для активации скидки.</p>
             <p>Цены снижены на компьютеры, ноутбуки, ЖК мониторы, наушники, игровые кресла, геймпады, компьютерные
-                мыши,<br>
+                мыши,
                 клавиатуры, коврики для мыши.</p>
             <p>Купите товары для геймеров со скидкой до 70%, гарантией и доставкой в интернет-магазине ЭЛЕКТРОСИТИ.
-                Выгодные цены <br> на товары для геймеров на electrocity.ru!</p>
+                Выгодные цены на товары для геймеров на electrocity.ru!</p>
         </div>
     </main>
 
-
+    <div class="mobile-menu">
+  <ul class="menu-list">
+    <li>
+      <svg class="menu-icon">
+        <use xlink:href="img/icons/icons.svg#home" />
+      </svg>
+      <a href="#0" class="active">Главная</a>
+    </li>
+    <li>
+      <svg class="menu-icon">
+        <use xlink:href="img/icons/icons.svg#search" />
+      </svg>
+      <a href="#0">Поиск</a>
+    </li>
+    <li>
+      <svg class="menu-icon">
+        <use xlink:href="img/icons/icons.svg#like" />
+      </svg>
+      <a href="#0">Избранное</a>
+    </li>
+    <li>
+      <svg class="menu-icon">
+        <use xlink:href="img/icons/icons.svg#basket" />
+      </svg>
+      <a href="#0">Корзина</a>
+    </li>
+    <li>
+      <svg class="menu-icon">
+        <use xlink:href="img/icons/icons.svg#account" />
+      </svg>
+      <a href="#0">Профиль</a>
+    </li>
+  </ul>
+</div>
     <footer>
   <div class="footer-wrapper">
     <div class="footer-links">
@@ -171,6 +326,7 @@
         </button>
       </div>
     </div>
+    
     <div class="footer-social">
       <p class="social-copyright">
         © 2014-2021 «ЭЛЕКТРОСИТИ». Все права защищены

@@ -7,6 +7,7 @@ import { server } from "./gulp/tasks/server.js";
 import { scss } from "./gulp/tasks/scss.js";
 import { js } from "./gulp/tasks/js.js";
 import { images } from "./gulp/tasks/images.js";
+import { mySvgSprite } from "./gulp/tasks/mySvgSprite.js";
 
 global.app = {
   path: path,
@@ -21,8 +22,9 @@ function watcher() {
   gulp.watch(path.watch.images, images);
 }
 
+
 //const mainTasks = gulp.parallel(html, scss, js, images);
-const mainTasks = gulp.parallel(html, scss, images);
+const mainTasks = gulp.parallel(html, scss, images, mySvgSprite);
 
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));

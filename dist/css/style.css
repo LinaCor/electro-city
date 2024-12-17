@@ -66,10 +66,6 @@ li {
   list-style-type: none;
 }
 
-img {
-  max-width: 100%;
-}
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -87,6 +83,7 @@ img {
   --accent-color: #E11C4B;
   --black-color: #000;
   --white-color: #fff;
+  --main-color: #8D8D8D;
 }
 
 body {
@@ -112,6 +109,10 @@ li:hover .icon,
 button:hover .icon {
   filter: brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
   background-color: transparent;
+}
+
+.burger-menu {
+  display: none;
 }
 
 header {
@@ -169,7 +170,9 @@ header .info-phone a:hover {
   color: var(--accent-color);
 }
 
-header .header-main {
+header .header-main,
+header .logo-wrapper,
+header .input-wrapper {
   max-width: 1200px;
   width: 100%;
   padding-right: 25px;
@@ -182,7 +185,9 @@ header .header-main {
   padding-bottom: 20px;
 }
 
-header .header-main .main-logo {
+header .header-main .main-logo,
+header .logo-wrapper .main-logo,
+header .input-wrapper .main-logo {
   font-family: var(--font-family-scnd);
   font-weight: 700;
   font-size: 22px;
@@ -192,13 +197,17 @@ header .header-main .main-logo {
   margin-right: 30px;
 }
 
-header .header-main .main-input {
+header .header-main .main-input,
+header .logo-wrapper .main-input,
+header .input-wrapper .main-input {
   position: relative;
   max-width: 523px;
   width: 100%;
 }
 
-header .header-main .main-input .search {
+header .header-main .main-input .search,
+header .logo-wrapper .main-input .search,
+header .input-wrapper .main-input .search {
   width: 100%;
   height: 46px;
   padding: 13px;
@@ -208,7 +217,19 @@ header .header-main .main-input .search {
   cursor: pointer;
 }
 
-header .header-main .main-input::before {
+header .header-main .main-input .search::-moz-placeholder, header .logo-wrapper .main-input .search::-moz-placeholder, header .input-wrapper .main-input .search::-moz-placeholder {
+  font-size: 16px;
+}
+
+header .header-main .main-input .search::placeholder,
+header .logo-wrapper .main-input .search::placeholder,
+header .input-wrapper .main-input .search::placeholder {
+  font-size: 16px;
+}
+
+header .header-main .main-input::before,
+header .logo-wrapper .main-input::before,
+header .input-wrapper .main-input::before {
   content: "";
   width: 26px;
   height: 26px;
@@ -220,17 +241,23 @@ header .header-main .main-input::before {
   background: url("../img/search.svg") 50% 50%/26px no-repeat;
 }
 
-header .header-main .main-list {
+header .header-main .main-list,
+header .logo-wrapper .main-list,
+header .input-wrapper .main-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header .header-main .main-list li:not(:last-child) {
+header .header-main .main-list li:not(:last-child),
+header .logo-wrapper .main-list li:not(:last-child),
+header .input-wrapper .main-list li:not(:last-child) {
   margin-right: 24px;
 }
 
-header .header-main .main-list li a {
+header .header-main .main-list li a,
+header .logo-wrapper .main-list li a,
+header .input-wrapper .main-list li a {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -239,8 +266,14 @@ header .header-main .main-list li a {
   transition: 0.5s ease-in-out;
 }
 
-header .header-main .main-list li a:hover {
+header .header-main .main-list li a:hover,
+header .logo-wrapper .main-list li a:hover,
+header .input-wrapper .main-list li a:hover {
   color: var(--accent-color);
+}
+
+header .header-main__mobile {
+  display: none;
 }
 
 header .header-links {
@@ -315,8 +348,8 @@ header .header-links .links-scroll {
 
 .promotion .main-list {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 2fr));
 }
 
 .promotion .main-list li img {
@@ -338,33 +371,12 @@ header .header-links .links-scroll {
 }
 
 .gaming-discount .discount-banner {
-  display: flex;
-  padding: 175px 90px;
-  padding-bottom: 150px;
-  background: url("../img/banner_1-group.png") 96% 60%/600px no-repeat, linear-gradient(to right, #D535E3 0%, #6F74E4 100%, #0052A4 100%);
-  color: var(--white-color);
+  margin-bottom: 35px;
+}
+
+.gaming-discount .discount-banner img {
+  max-width: 100%;
   border-radius: 30px;
-  margin-bottom: 36px;
-  line-height: 76px;
-  letter-spacing: -1.9px;
-}
-
-.gaming-discount .discount-banner .banner-text {
-  width: 50%;
-}
-
-.gaming-discount .discount-banner .banner-text h1 {
-  font-size: 72px;
-  margin-bottom: 20px;
-}
-
-.gaming-discount .discount-banner .banner-text p {
-  font-size: 36px;
-  letter-spacing: -0.5px;
-}
-
-.gaming-discount .discount-banner .banner-image {
-  width: 50%;
 }
 
 .gaming-discount .discount-description h2 {
@@ -381,8 +393,13 @@ header .header-links .links-scroll {
 }
 
 .gaming-discount .discount-description p {
+  max-width: 1100px;
   font-size: 18px;
   margin-bottom: 20px;
+}
+
+.mobile-menu {
+  display: none;
 }
 
 footer {
@@ -502,4 +519,23 @@ footer .footer-wrapper .footer-social .social-list li .link-youtube {
 
 footer .footer-wrapper .footer-social .social-list li .link-telegram {
   background-image: url("../img/telegram.svg");
+}
+
+@media (max-width: 768px) {
+  footer .footer-wrapper .footer-links .links-contacts .info-phone {
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  footer .footer-wrapper .footer-links .links-contacts .info-phone .mail-icon,
+  footer .footer-wrapper .footer-links .links-contacts .info-mail .mail-icon {
+    width: 18px;
+  }
+
+  footer .footer-wrapper .footer-social .social-list li .icon-social {
+    width: 30px;
+    height: 30px;
+    background-size: 18px;
+  }
 }

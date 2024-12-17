@@ -1,122 +1,7 @@
-//--------------reset style
-* {
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
+@import "_reset";
+@import "_mixins";
+@import "_vars";
 
-*,
-*:before,
-*:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-:focus,
-:active {
-  outline: none;
-}
-
-a:focus,
-a:active {
-  outline: none;
-}
-
-
-html,
-body {
-  height: 100%;
-  width: 100%;
-  font-style: 100%;
-  line-height: 1;
-  font-style: 14px;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
-input,
-button,
-textarea {
-  font-family: inherit;
-  background-color: transparent;
-}
-
-input::-ms-clear {
-  display: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-
-a,
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-ul li,
-li {
-  list-style-type: none;
-}
-
-img {
-  max-width: 100%;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  overflow: hidden;
-}
-
-//-------------reset style
-
-@mixin flex-all {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-@mixin flex-vert {
-  display: flex;
-  align-items: center;
-}
-
-@mixin page-width {
-  max-width: 1200px;
-  width: 100%;
-  padding-right: 25px;
-  padding-left: 25px;
-  margin: 0 auto;
-}
-
-
-
-//-------------mixins
-
-:root {
-  --font-family-frst: "Roboto", serif; //font-famili
-  --font-family-scnd: "Rosario", sans-serif; //second-family
-  --accent-color: #E11C4B;
-  --black-color: #000;
-  --white-color: #fff;
-}
 
 body {
   display: flex;
@@ -140,6 +25,10 @@ li:hover .icon,
 button:hover .icon {
   filter: brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
   background-color: transparent;
+}
+
+.burger-menu {
+  display: none;
 }
 
 header {
@@ -187,7 +76,9 @@ header {
     }
   }
 
-  .header-main {
+  .header-main,
+  .logo-wrapper,
+  .input-wrapper {
     @include page-width;
     @include flex-all;
     padding-top: 20px;
@@ -216,6 +107,10 @@ header {
         border: 2px solid #ddd;
         border-radius: 100px;
         cursor: pointer;
+
+        &::placeholder {
+          font-size: 16px;
+        }
       }
 
       &::before {
@@ -251,6 +146,10 @@ header {
         }
       }
     }
+  }
+
+  .header-main__mobile {
+    display: none;
   }
 
   .header-links {
@@ -315,8 +214,8 @@ header {
 
   .main-list {
     display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 2fr));
 
     li {
 
@@ -339,35 +238,14 @@ header {
 
 
   .discount-banner {
-    display: flex;
-    padding: 175px 90px;
-    padding-bottom: 150px;
-    background: url('@img/banner_1-group.png') 96% 60%/600px no-repeat, linear-gradient(to right, #D535E3 0%, #6F74E4 100%, #0052A4 100%);
-    color: var(--white-color);
-    border-radius: 30px;
-    margin-bottom: 36px;
-    line-height: 76px;
-    letter-spacing: -1.9px;
+    margin-bottom: 35px;
 
-
-    .banner-text {
-      width: 50%;
-
-      h1 {
-        font-size: 72px;
-        margin-bottom: 20px;
-      }
-
-      p {
-        font-size: 36px;
-        letter-spacing: -0.5px;
-      }
-    }
-
-    .banner-image {
-      width: 50%;
+    img {
+      max-width: 100%;
+      border-radius: 30px;
     }
   }
+
 
   .discount-description {
 
@@ -385,10 +263,15 @@ header {
     }
 
     p {
+      max-width: 1100px;
       font-size: 18px;
       margin-bottom: 20px;
     }
   }
+}
+
+.mobile-menu {
+  display: none;
 }
 
 
@@ -424,7 +307,11 @@ footer {
         @include flex-all;
 
         .info-phone {
-          margin-right: 68px
+          margin-right: 68px;
+
+          @media (max-width: 768px) {
+            margin-right: 40px;
+          }
         }
 
         .info-phone,
@@ -433,6 +320,10 @@ footer {
 
           .mail-icon {
             width: 25px;
+
+            @media (max-width: 480px) {
+              width: 18px;
+            }
           }
 
           a {
@@ -472,6 +363,12 @@ footer {
             border-radius: 100%;
             border: 1px solid #8d8d8d;
             transition: 0.5s ease;
+
+            @media (max-width: 480px) {
+              width: 30px;
+              height: 30px;
+              background-size: 18px
+            }
 
             &:hover {
               background-color: #ffcaca;

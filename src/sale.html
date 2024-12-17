@@ -8,30 +8,31 @@
 
 <body>
     @@include('html/header.html', {})
+    @@include('html/burger-menu.html', {})
+
     <main class="gaming-discount">
         <div class="discount-banner">
-            <div class="banner-text">
-                <h1>Суперскидки на товары<br> для гейминга</h1>
-                <p>c 8 октября до 26 октября</p>
-            </div>
-            <div class="banner-image">
-            </div>
+            <picture>
+                <source media="(max-width: 768px)" srcset="@img/banner_1_big-768.png">
+                <source media="(max-width: 576px)" srcset="@img/banner_1.png">
+                <img src="@img/banner_1_big.png" alt="Суперскидки на товары для гейминга. С 8 октября до 26 октября">
+            </picture>
         </div>
         <div class="discount-description">
             <h2>Скидки до 70% на товары для гейминга</h2>
             <span>c 8 октября до 26 октября</span>
             <p>В период с 8 по 26 октября не пропустите скидки до 70% товары для геймеров. Выбирайте товары из
-                акционного списка <br>
+                акционного списка
                 и при оформлении заказа укажите промокод "GAMER" для активации скидки.</p>
             <p>Цены снижены на компьютеры, ноутбуки, ЖК мониторы, наушники, игровые кресла, геймпады, компьютерные
-                мыши,<br>
+                мыши,
                 клавиатуры, коврики для мыши.</p>
             <p>Купите товары для геймеров со скидкой до 70%, гарантией и доставкой в интернет-магазине ЭЛЕКТРОСИТИ.
-                Выгодные цены <br> на товары для геймеров на electrocity.ru!</p>
+                Выгодные цены на товары для геймеров на electrocity.ru!</p>
         </div>
     </main>
 
-
+    @@include('html/mobile-menu.html', {})
     @@include('html/footer.html', {})
 </body>
 

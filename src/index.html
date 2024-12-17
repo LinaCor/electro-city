@@ -8,20 +8,28 @@
 
 <body>
     @@include('html/header.html', {})
+    @@include('html/burger-menu.html', {})
+
     <main class="promotion">
         <h1>Акции</h1>
         <div class="container-main">
             <ul class="main-list">
                 <li>
                     <a href="sale.html">
-                        <img src="@img/banner_1.png"
-                            alt="Суперскидки на товары для гейминга. С 8 октября до 26 октября">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="@img/banner_1-768.png">
+                            <img src="@img/banner_1.png"
+                                alt="Суперскидки на товары для гейминга. С 8 октября до 26 октября">
+                        </picture>
                     </a>
                 </li>
                 <li>
                     <a href="#0">
-                        <img src="@img/banner_2.png" alt="Кэшбэк 20% 
-                        на мониторы Samsung. С 1 октября до 23 октября">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="@img/banner_2-768.png">
+                            <img src="@img/banner_2.png"
+                                alt="Кэшбэк 20% на мониторы Samsung. С 1 октября до 23 октября">
+                        </picture>
                     </a>
                 </li>
                 <li>
@@ -66,6 +74,8 @@
             </ul>
         </div>
     </main>
+
+    @@include('html/mobile-menu.html', {})
     @@include('html/footer.html', {})
 </body>
 
